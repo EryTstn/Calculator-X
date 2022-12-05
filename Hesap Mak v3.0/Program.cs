@@ -34,6 +34,27 @@ namespace Hesap_Mak_v3._0
             }
             return x;
         }
+        static void ikili(int x)
+        {
+            int b = 0;
+            int y = x;
+            while (x > 0)
+            {
+                x = x / 2;
+                b++;
+            }
+            int[] dizi = new int[b];
+            for (int i = 0; i < b; i++)
+            {
+                dizi[i] = y % 2;
+                y = (y - (y % 2)) / 2;
+            }
+            for (int i = b - 1; i >= 0; i--)
+            {
+                Console.Write(dizi[i] + " ");
+            }
+            Console.WriteLine(" ");
+        }
         static int fakt(int x)
         {
             int h = x;
@@ -51,7 +72,7 @@ namespace Hesap_Mak_v3._0
             {
 
                 Console.WriteLine();
-                Console.Write("Lütfen İşlem Seçiniz(+,-,*,/,üs,k(karekök), f(faktöriyel), h(2 Dik Kenarın Hipotenüsü) c(Çember İşlemleri) veya a(Asal Kontrolu): ");
+                Console.Write("Lütfen İşlem Seçiniz(+,-,*,/,üs,k(karekök), f(faktöriyel), h(2 Dik Kenarın Hipotenüsü), c(Çember İşlemleri), i(İkili Sayı Sistesimine Çevirme) veya a(Asal Kontrolu): ");
                 string a = Console.ReadLine();
                 double s = 0;
                 Console.WriteLine();
@@ -168,6 +189,12 @@ namespace Hesap_Mak_v3._0
                         Console.WriteLine("Lütfen Geçerli Bir pi Değeri Giriniz!! ");
                     }
 
+                }
+                else if (a == "i")
+                {
+                    Console.Write("Tam Sayı Giriniz: ");
+                    int x = Convert.ToInt32(Console.ReadLine());
+                    ikili(x);
                 }
 
                 else
