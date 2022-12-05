@@ -11,15 +11,17 @@ namespace Hesap_Mak_v3._0
 
         static void asalmı(int x)
         {
+            Console.Write("Bölenler: ");
             int l = 0;
             for (int i = 1; i <= x; i++)
             {
                 if (x % i == 0)
                 {
+                    Console.Write(+ i + " ");
                     l++;
                 }
             }
-
+            Console.WriteLine();
             if (l == 2)
             { Console.WriteLine("Girdiğiniz Sayı Asal Sayıdır"); }
             else
